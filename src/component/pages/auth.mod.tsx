@@ -8,6 +8,7 @@ import { T_LocalData_W_DP } from '../../store/reducer';
 import { resetData,setData } from '../../store/actions';
 import { M_LocalData } from '../../store/models';
 import { SET_USER_INFO } from '../../store/constants';
+import { API_AUTH } from '../struct/constant';
 
 export {
     React,
@@ -17,7 +18,8 @@ export {
     connect,
     resetData,
     setData,
-    SET_USER_INFO
+    SET_USER_INFO,
+    API_AUTH
 };
 export type {
     U_authState,

@@ -4,7 +4,8 @@ import {
     withReactContent,
     postData,
     connect,
-    SET_USER_INFO
+    SET_USER_INFO,
+    API_AUTH
 } from './auth.mod';
 import type {
     U_authState,
@@ -84,7 +85,7 @@ class AuthPage extends React.Component<T_LocalData_W_DP, U_authState> {
          * proccess the login
          */
         const authuri: string | undefined = process.env.API_AUTH;
-        postData('http://localhost:8080/auth', '', {
+        postData(API_AUTH, '', {
             username: this.state.username,
             password: this.state.password,
             remember: this.state.remember
