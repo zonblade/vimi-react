@@ -6,7 +6,9 @@ import {
     DEL_USER_INFO,
     getData,
     postData,
-    MONTH_LIST
+    MONTH_LIST,
+    API_PROJ_LIST,
+    API_PROJ_UPDT
 } from './project.mod';
 import type {
     US_projectListState,
@@ -71,7 +73,7 @@ class ProjectPage extends React.Component<T_LocalData_W_DP, U_projectState> {
         const searchParams = new URLSearchParams();
         searchParams.append('search',search);
         searchParams.append('sortDate',sortDate);
-        getData('http://localhost:8080/project.list?'+searchParams,this.props.local.token,{}).then((ok:UL_projectListResponseData)=>{
+        getData(`${API_PROJ_LIST}?`+searchParams,this.props.local.token,{}).then((ok:UL_projectListResponseData)=>{
             console.log(ok)
             this.setState({itemLists:ok.data.items,searchText:search});
         }).catch((e:any)=>{});
@@ -85,7 +87,7 @@ class ProjectPage extends React.Component<T_LocalData_W_DP, U_projectState> {
         }
         console.log(payload)
         if(authorization){
-            postData('http://localhost:8080/project.data',authorization,payload,'PATCH').then((e:UL_projectListPatchData)=>{
+            postData(`${API_PROJ_UPDT}`,authorization,payload,'PATCH').then((e:UL_projectListPatchData)=>{
                 console.log(e)
                 if(e.success){
                     const updateField = this.state.itemLists.map((itm:US_projectListState)=>{

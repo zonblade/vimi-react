@@ -7,7 +7,7 @@ import { T_LocalData_W_DP } from '../../store/reducer';
 import { M_LocalData } from '../../store/models';
 import { DEL_USER_INFO } from '../../store/constants';
 import { getData,postData } from './global.mod';
-
+import { API_PROJ_LIST,API_PROJ_UPDT } from '../struct/constant';
 
 const MONTH_LIST:Array<string> = [
     "January","February","May","June","July",
@@ -23,7 +23,9 @@ export {
     getData,
     postData,
     DEL_USER_INFO,
-    MONTH_LIST
+    MONTH_LIST,
+    API_PROJ_LIST,
+    API_PROJ_UPDT
 };
 export type {
     US_projectListState,
