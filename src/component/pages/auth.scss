@@ -1,0 +1,99 @@
+.Center-Base {    
+    align-items: center;
+    justify-content: center;
+}
+
+.Login-Box {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    border-top: 0.3px solid rgba(0, 0, 0, 0.2);
+    border-left: 0.3px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 3.3px solid rgba(0, 0, 0, 0.6);
+    border-right: 3.3px solid rgba(0, 0, 0, 0.6);
+
+    .Logo-Root {
+        display:flex;
+        flex-direction: column;
+        flex:4;
+        align-items: center;
+        justify-content: center;
+
+        .Image-Logo {
+            background: url(https://cdn.discordapp.com/attachments/975012939880869948/1031104930183925770/Proyek_Baru_3.png);
+            background-size: 128px;
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: center;
+            height: 128px;
+            width: 128px;
+        }
+    }
+
+    .Input-Root {
+        display:flex;
+        flex-direction: column;
+        flex:2;
+
+        .Input-Box {
+            margin: 10px;
+            display: flex;
+            flex-direction: row;
+    
+            .Image-User {
+                flex:1;
+                background: url(https://cdn-icons-png.flaticon.com/512/1077/1077114.png);
+                background-repeat: no-repeat;
+                background-size: 14px;
+                background-position-y: center;
+                background-position-x: center;
+                height: 24px;
+                width: 24px;
+            }
+            
+            .Image-Password {
+                flex:1;
+                background: url(https://cdn-icons-png.flaticon.com/512/807/807369.png);
+                background-repeat: no-repeat;
+                background-size: 14px;
+                background-position-y: center;
+                background-position-x: center;
+                height: 24px;
+                width: 24px;
+            }
+    
+            input {
+                flex:10;
+                border: 0;
+                border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+                background-color: rgba(0, 0, 0, 0.0);
+                height:1.5rem;
+                width: 98%;
+            }
+        }
+    }
+
+    .Login-Button-Root {
+        display:flex;
+        flex-direction: column;
+        flex:1;
+        align-items: center;
+
+        .Login-Button-Action {
+            font-weight: 600;
+            cursor: pointer;
+            &:hover {
+                margin-top: 1px;
+                border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+            }
+            &:active {
+                margin-top: 3px;
+            }
+        }
+    }
+}

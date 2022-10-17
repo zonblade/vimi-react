@@ -1,0 +1,392 @@
+.Main-Container {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+}
+
+.Overlay-Container {
+    position: absolute;
+    top: 0;
+    float: left; 
+    width: 0;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+
+    .Inner-Overlay {
+        display: flex;
+        z-index: 1;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        min-height: 300px;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 10px;
+        padding: 10px;
+        cursor: default;
+    }
+}
+
+.Item-Container {
+    width: 100%;
+    max-width: 920px;
+    min-height: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+    .Container-Title {
+        display: flex;
+        justify-items: left;
+        flex: 1;
+        max-height: 120px;
+
+        .Title-Name {
+            font-weight: 400;
+        }
+
+        .Title {
+            flex: 1;
+        }
+
+        .Manage {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 200px;
+
+            .Logout-Button-Root {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                align-items: center;
+
+                .Button-Action {
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    &:hover {
+                        margin-top: 3px;
+                        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+                    }
+
+                    &:active {
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+    }
+
+    .Container {
+        flex: 1;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+
+        .Container-Header {
+            display: flex;
+            flex-direction: row;
+
+            .Sub-Title {
+                flex: 1;
+                padding-left: 20px;
+            }
+            .Sub-Search {
+                flex: 1;
+                display: flex;
+                padding-left: 20px;
+                max-width: 230px;
+                align-items: center;
+                justify-content: center;
+                
+                input {
+                    flex:10;
+                    border: 0;
+                    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+                    background-color: rgba(0, 0, 0, 0.0);
+                    height:2.5rem;
+                    width: 98%;
+                    
+                    &:focus {
+                        outline-width: 0;
+                        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+                    }
+                }
+            }
+
+            .Sub-Sort {
+                flex: 1;
+                display: flex;
+                max-width: 180px;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .Container-Mapped {
+
+            $padding_tile: 1.4rem;
+            $padding_bottom: 5px;
+
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+
+            .Mapped-Title {
+                display: flex;
+                flex-direction: row;
+                background-color: rgba(0, 0, 0, 0.05);
+                border-radius: 8px;
+                // border: 0.4px solid rgba(0,0,0,0.2);
+                margin: 8px;
+                height: 56px;
+
+                .Position {
+                    display: flex;
+                    flex: 1;
+                    align-items: center;
+                    padding-left: $padding_tile;
+                    padding-bottom: $padding_bottom;
+                    justify-content: left;
+                    font-weight: 600;
+                }
+                .Max120 {
+                    max-width: 120px;
+                }
+            }
+
+            .Mapped-Items {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                background-color: white;
+                border-radius: 8px;
+                border: 0.4px solid rgba(0, 0, 0, 0.1);
+                margin: 8px;
+                height: 56px;
+
+                .Archive {
+                    background: url(https://cdn-icons-png.flaticon.com/512/3071/3071749.png);
+                    height: 20px;
+                    width: 20px;
+                    position: absolute;
+                    top:-5px;
+                    left: -5px;
+                    // background-color: black;
+                    background-repeat: no-repeat;
+                    background-size: 20px;
+                    background-position-y: center;
+                    background-position-x: center;
+                }
+
+                &:hover {
+                    border-top: 0.4px solid rgba(0, 0, 0, 0.1);
+                    border-left: 0.4px solid rgba(0, 0, 0, 0.1);
+                    border-bottom: 3px solid rgba(0, 0, 0, 0.25);
+                    border-right: 3px solid rgba(0, 0, 0, 0.25);
+                    
+                    .Archive {
+                        background: url(https://cdn-icons-png.flaticon.com/512/57/57097.png);
+                        height: 20px;
+                        width: 20px;
+                        position: absolute;
+                        top:-5px;
+                        left: -5px;
+                        // background-color: black;
+                        background-repeat: no-repeat;
+                        background-size: 18px;
+                        background-position-y: center;
+                        background-position-x: center;
+                    }
+                }
+
+                .Max120 {
+                    max-width: 120px;
+                }
+
+                .Position {
+                    display: flex;
+                    flex-direction: row;
+                    flex: 1;
+                    align-items: center;
+                    padding-left: $padding_tile;
+                    padding-bottom: $padding_bottom;
+                    justify-content: left;
+
+                    .Flex1 {
+                        flex: 1;
+                        align-items: center;
+                        justify-content: left;
+                    }
+
+                    button {
+                        cursor: pointer;
+                    }
+                }
+
+                .Position2 {
+                    display: flex;
+                    flex-direction: row;
+                    flex: 1;
+                    align-items: center;
+                    padding-left: $padding_tile;
+                    padding-bottom: $padding_bottom;
+                    justify-content: left;
+
+                    .Flex1 {
+                        flex: 1;
+                        max-width: 48px;
+                        align-items: center;
+                        justify-content: left;
+                    }
+
+                    .Flex2 {
+                        flex: 1;
+                        align-items: center;
+                        justify-content: left;
+                    }
+                }
+                
+                .Position-Manage {
+                    flex:1;
+                    display: flex;
+                    align-items: center;
+                    padding-left: $padding_tile;
+                    padding-bottom: $padding_bottom;
+                    
+                    $button_width: 24px;
+                    $button_height: 24px;
+                    .Button-Archive {
+                        margin-left: 15px;
+                        background: url(https://cdn-icons-png.flaticon.com/512/7183/7183313.png);
+                        background-repeat: no-repeat;
+                        background-size: 24px;
+                        background-position-y: center;
+                        background-position-x: center;
+                        width: $button_width;
+                        height: $button_height;
+                        display: grid;
+                        place-items: center;
+                        border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+                        cursor: pointer;
+                        &:hover{
+                            margin-top: 3px;
+                            border-bottom: 0.5px solid rgba(163, 103, 103, 0.5);
+                        }
+                        &:active{
+                            margin-top: 6px;
+                        }
+                    }
+
+                    .Button-Unarchive {
+                        margin-left: 15px;
+                        background: url(https://cdn-icons-png.flaticon.com/512/4949/4949080.png);
+                        background-repeat: no-repeat;
+                        background-size: 24px;
+                        background-position-y: center;
+                        background-position-x: center;
+                        width: $button_width;
+                        height: $button_height;
+                        display: grid;
+                        place-items: center;
+                        border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+                        cursor: pointer;
+                        &:hover{
+                            margin-top: 3px;
+                            border-bottom: 2px solid rgba(103, 163, 119, 0.5);
+                        }
+                        &:active{
+                            margin-top: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    $bg_repeat: no-repeat;
+    $bg_size: 20px;
+    $bg_positon_y: center;
+    $bg_positon_x: center;
+    $bg_height: 24px;
+    $bg_width: 24px;
+
+    .Icon-Incomplete {
+        background: url(https://cdn-icons-png.flaticon.com/512/3187/3187869.png);
+        background-repeat: $bg_repeat;
+        background-size: $bg_size;
+        background-position-y: $bg_positon_y;
+        background-position-x: $bg_positon_x;
+        height: $bg_height;
+        width: $bg_width;
+    }
+
+    .Icon-Shooting {
+        background: url(https://cdn-icons-png.flaticon.com/512/2970/2970982.png);
+        background-repeat: $bg_repeat;
+        background-size: $bg_size;
+        background-position-y: $bg_positon_y;
+        background-position-x: $bg_positon_x;
+        height: $bg_height;
+        width: $bg_width;
+    }
+
+    .Icon-Completed {
+        background: url(https://cdn-icons-png.flaticon.com/512/190/190411.png);
+        background-repeat: $bg_repeat;
+        background-size: $bg_size;
+        background-position-y: $bg_positon_y;
+        background-position-x: $bg_positon_x;
+        height: $bg_height;
+        width: $bg_width;
+    }
+
+    .Icon-FeedBack {
+        background: url(https://cdn-icons-png.flaticon.com/512/2016/2016279.png);
+        background-repeat: $bg_repeat;
+        background-size: $bg_size;
+        background-position-y: $bg_positon_y;
+        background-position-x: $bg_positon_x;
+        height: $bg_height;
+        width: $bg_width;
+    }
+
+    .Icon-Editing {
+        background: url(https://cdn-icons-png.flaticon.com/512/4047/4047799.png);
+        background-repeat: $bg_repeat;
+        background-size: $bg_size;
+        background-position-y: $bg_positon_y;
+        background-position-x: $bg_positon_x;
+        height: $bg_height;
+        width: $bg_width;
+    }
+
+    .Icon-Default {
+        background: url(https://cdn-icons-png.flaticon.com/512/4344/4344882.png);
+        background-repeat: $bg_repeat;
+        background-size: $bg_size;
+        background-position-y: $bg_positon_y;
+        background-position-x: $bg_positon_x;
+        height: $bg_height;
+        width: $bg_width;
+    }
+
+    .Icon-Archived {
+        background: url(https://cdn-icons-png.flaticon.com/512/4344/4344882.png);
+        background-repeat: $bg_repeat;
+        background-size: $bg_size;
+        background-position-y: $bg_positon_y;
+        background-position-x: $bg_positon_x;
+        height: $bg_height;
+        width: $bg_width;
+    }
+}
